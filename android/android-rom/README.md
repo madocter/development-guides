@@ -1,0 +1,12 @@
+# android-rom
+How to flash root and backup your android ROM.
+
+**Requirements:**
+
+* Install python: [PYTHON_JAVA_WIN32.md](..%2F..%2Fenvironment-setup%2FPYTHON_JAVA_WIN32.md#python)
+
+## Guides
+[ANDROID_ROOT_CONCEPTS.md](ANDROID_ROOT_CONCEPTS.md)  
+[ANDROID_ROM_BACKUP.md](ANDROID_ROM_BACKUP.md)  
+[LINEAGE_OS_UNIHERZT_TINTAN_GARGOYLE.md](LINEAGE_OS_UNIHERZT_TINTAN_GARGOYLE.md)  
+[UNIHERZT_ROM_RESTORE_SP_FLASH_TOOL.md](UNIHERZT_ROM_RESTORE_SP_FLASH_TOOL.md)
