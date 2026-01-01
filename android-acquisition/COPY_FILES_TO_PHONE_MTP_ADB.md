@@ -37,14 +37,22 @@ Multimedia transfer protocol, is used to bind phone to pc using usb cable.
 Using Windows explorer will take long time calculating before copy start, and then it will probably stop after sometime giving some error, windows also is very problematic with certain long names even after applying patches.
 
 # FTP
-This protocol is bad designed for transferring multiple files it will timeout eventually and stuck after a while doesn't matter how do you setup Filezilla on the client side
+This protocol is bad designed for transferring multiple files it will timeout eventually and stuck because of multiple reasons timeout, regadless of FTP client setup, computer sleep or hibernate, phone disconnet.
 
-or Android apps like File transfer, eventually will be stuck.
+After 2 or 3 attempts shall be possible make complete backup. 
+
+Recommended software:
+Phone: CX file exporer and enable FTP access, and do not run in to other task otherwise might disconnect clients.
+PC: Filezilla.
 
 # Phone software
 
 There are some tools such as: airdroid to help to back up files, contacts, calls, etc...
 
+# Computer software
+
+* MTKClient can easily with graphic interface completely backup all ROM partitions from MTK devices including **user-data** partition which contains all data.
+* SP Flash Tool with scatter file can restore stock (factory) ROM in to your phone in case of brick.
 
 
 
