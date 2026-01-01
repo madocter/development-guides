@@ -52,6 +52,7 @@ There are some tools such as: airdroid to help to back up files, contacts, calls
 # Computer software
 
 * MTKClient can easily with graphic interface completely backup all ROM partitions from MTK devices including **user-data** partition which contains all data.
+      * Usually works well with Ubuntu, never work at all in Windows regardlesss of drivers tweaks etc... in my case.
 * SP Flash Tool with scatter file can restore stock (factory) ROM in to your phone in case of brick.
 
 
