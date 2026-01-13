@@ -74,7 +74,7 @@ As for media files of whatsapp is located here: `\Android\media\com.whatsapp\Wha
     - Investigate the database design to navigate the decrypted results. The structure is straightforward, and table names are descriptive.
     - Use `Whatsappviewer` opensource tool https://github.com/madocter/whatsapp-viewer/releases
       - This can't see media files yet, such as: audio notes, stickers, images.
-    - Use commercial solution tool: [https://www.backuptrans.com/iphone-whatsapp-to-android-transfer.html](https://www.backuptrans.com/android-whatsapp-transfer.html)
+    - Use commercial solution tool: [[https://www.backuptrans.com/iphone-whatsapp-to-android-transfer.html](https://www.backuptrans.com/android-whatsapp-transfer.html)](https://www.backuptrans.com/android-whatsapp-transfer.html)
       - This solution is pretty good can open media files.
       - To import media to copy all your whatsapp media with MTP (copy files manually) or ADB command:
         - This is the media directory `\Android\media\com.whatsapp\WhatsApp\Media`
