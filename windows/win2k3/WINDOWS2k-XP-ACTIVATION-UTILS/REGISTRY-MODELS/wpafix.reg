@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+; Make sure deny permission for SYSTEM after this change : Right click on WPAEvents key, permissions, SYSTEM , Deny all.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WPAEvents]
+"OOBETimer"=hex:ff,d5,71,d6,8b,6a,8d,6f,d5,33,93,fd
+"LastWPAEventLogged"=hex:d5,07,05,00,06,00,07,00,0f,00,2d,00,24,00,29,00

@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+
+; This will launch CMD.exe on windows startup which allow unlock the system in case safe mode is not working
+
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup]
+"SetupType"=dword:00000001
+"SystemSetupInProgress"=dword:00000001
+"CmdLine"="cmd.exe"
+
+

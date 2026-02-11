@@ -1,0 +1,40 @@
+Windows Registry Editor Version 5.00
+
+; This is the model of how Installation of Windows 2003 enterprise R2 x64 server should look like
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\LicenseService]
+"Type"=dword:00000010
+; START DISABLED
+"Start"=dword:00000004
+"ErrorControl"=dword:00000001
+"ImagePath"=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,\
+  74,00,25,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6c,\
+  00,6c,00,73,00,73,00,72,00,76,00,2e,00,65,00,78,00,65,00,00,00
+"DisplayName"="License Logging"
+"ObjectName"="NT AUTHORITY\\NetworkService"
+"Description"="Monitors and records client access licensing for portions of the operating system (such as IIS, Terminal Server and File/Print) as well as products that aren't a part of the OS, like SQL and Exchange Server. If this service is stopped, licensing will be enforced, but will not be monitored."
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\LicenseService]
+"Type"=dword:00000010
+; START DISABLED
+"Start"=dword:00000004
+"ErrorControl"=dword:00000001
+"ImagePath"=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,\
+  74,00,25,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6c,\
+  00,6c,00,73,00,73,00,72,00,76,00,2e,00,65,00,78,00,65,00,00,00
+"DisplayName"="License Logging"
+"ObjectName"="NT AUTHORITY\\NetworkService"
+"Description"="Monitors and records client access licensing for portions of the operating system (such as IIS, Terminal Server and File/Print) as well as products that aren't a part of the OS, like SQL and Exchange Server. If this service is stopped, licensing will be enforced, but will not be monitored."
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WPAEvents]
+"OOBETimer"=hex:ff,d5,71,d6,8b,6a,8d,6f,d5,33,93,fd
+"LastWPAEventLogged"=hex:ea,07,01,00,06,00,1f,00,00,00,0f,00,35,00,71,02
+
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup]
+"SetupType"=dword:00000000
+"SystemSetupInProgress"=dword:00000000
+"CmdLine"="setup -newsetup"
+"SystemPrefix"=hex:6b,00,00,00,00,20,54,06
+"SystemPartition"="\\Device\\HarddiskVolume6" ; Your VOLUME
+"OsLoaderPath"="\\"
+
