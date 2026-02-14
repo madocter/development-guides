@@ -279,7 +279,7 @@ for %i in (*.mof *.mfl) do mofcomp %i
 net start winmgmt
 ``
 
-Force Plug and Play Redetection:
+Force Plug and Play Re-detection:
 Delete the old device enumerators in the registry so that Windows searches for new ones:
 
 Delete values in `HKLM\SYSTEM\WPA` (such as the signature hashes mentioned).
@@ -312,14 +312,80 @@ Solution: Before moving the disk, change the disk mode in the new motherboard's 
 
 ### Blue screen 0x7B fix 
 
-If you have access to SAFE mode from there open control panel / device manager / remove unknown and hard-disk drivers, install proper drivers from there.
+If you have access to SAFE mode from there open control panel / device manager / remove unknown and hard-disk drivers, install proper drivers from there. Install then appropriate SATA drivers.
 
-IF not use CMD: [CMD.exe](#CMD.exe on startup)
+Usually you will not have access to the OS.
 
-Run the following:
-``reg add "HKLM\SYSTEM\CurrentControlSet\Services\atapi" /v Start /t REG_DWORD /d 0 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\intelide" /v Start /t REG_DWORD /d 0 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\pciide" /v Start /t REG_DWORD /d 0 /f``
+So need download appropriated SATA drivers and install them offline.
+
+**Motherboard SATA controllers**
+
+The new motherboard in my case is Asus SABERTOOTH Z77 it have 2 sata controllers: ASMEDIA and IRS (Intel rapid storage)
+
+Drivers:
+* Asmedia: asahxp.sys
+* Intel Rapid Storage: iaStor.sys
+
+Motherboard:
+2 White SATA connectors Asmedia 6gps ports
+4 Black SATA connectors IRS 3gps ports
+2 Brow STA connectors IRS 6gps ports
+
+So it really matter where you connect your WIN2k3 or XP SP3 (Other SP for Windows XP shall not work)
+For me work on IRS 3gps without any driver installation.
+
+**BIOS SATA MODE**
+
+I used `IDE` mode since got BSO with ACHI or RAID mode.
+
+**Install drivers offline**
+
+Using another Windows OS or Winxp little from Hirens boot.
+
+* Download drivers, locate appropriate directory usually files/x64/x86 then you will see (IF your OS is x64 check if syswow64 is present in WINDOWS)
+  * Caf
+  * Sys
+  * Inf
+    * You can check information of the driver opening this file.
+* Place SYS file inside system32/drivers in my case: iaStor.sys 
+* Register driver editing SYSTEM hive offline.
+* Load SYSTEM hive of the faulty Windows with regedit.exe.
+* Check controlASet in use: `HKLM\SYSTEM\Select check current` 
+  * On every new hardware it might create a new CurrentControlSet 01,02,03. Example: 01 is first one , 02 last know working, 03 current.
+* Edit the currentControlset:
+  * HKLM\SYSTEM\CurrentControlSet01\Services\  (Assuming current control set is 01)
+  * Add new Key in my case: iaStor
+  * Follow any other drive structure as model.
+  * Example:
+    ```
+    [HKEY_LOCAL_MACHINE\SYSTEMWIN2K3OFFLINE\ControlSet003\Services\iaStor]
+    "Type"=dword:00000001
+    "Start"=dword:00000000
+    "ErrorControl"=dword:00000001
+    "Group"="SCSI miniport"
+    "ImagePath"="system32\DRIVERS\iaStor.sys"
+    ```
+* Make sure windwos load the new driver edit ServiceGroupOrder:
+* `HKLM\OFFLINE\ControlSet001\Control\ServiceGroupOrder`  edit the entry `List` and add the new driver group: `SCSI miniport`
+* Unload hive and try.
+
+
+**Enable default SATA drivers offline**
+This can solve the issue enabling default ata kernel drivers:
+
+``
+reg add "HKLM\SYSTEM\CurrentControlSet01\Services\atapi" /v Start /t REG_DWORD /d 0 /f
+reg add "HKLM\SYSTEM\CurrentControlSet01\Services\intelide" /v Start /t REG_DWORD /d 0 /f
+reg add "HKLM\SYSTEM\CurrentControlSet01\Services\pciide" /v Start /t REG_DWORD /d 0 /f
+``
+
+Set `Start` value as `0`
+
+If nothing works time to perform a Windows reinstallation:  [reinstall windows](#Windows re-installation)
+
+Use exactly same installation version as the installed OS.
+
+Make sure to load SATA or RAID drivers of the new motherboard with USB or making an unattended installation to avoid blue screen again.
 
 
 ## Use cases

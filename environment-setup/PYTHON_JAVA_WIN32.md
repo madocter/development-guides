@@ -2,8 +2,12 @@
 # Linux Bash and tools for Windows
 
 ### Gitbash
-Is like a virtual unix execution environment running on Windows host, it have own virutal space and shared space with Windows.
-Install GIT bash (Included with Github desktop): https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop?platform=windows
+Is like a virtual unix execution environment running on Windows host, it has own virtual space and shared space with Windows.
+
+Install GIT bash + GIT: https://git-scm.com/install/windows a good way to install gitbash is to also install GIT which offer you Gitbash installation.
+
+Recommended Github desktop available for Linux/Windows:
+https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop?platform=windows
 
 #### Unix tools: zip
 This is necessary for your Git bash environment
@@ -80,6 +84,29 @@ note HOME points to: `C:\Users\YOUR_USER\`
 
 Linux:
 `~\.sdkman\candidates\java\current\bin`
+
+Advanced system settings / Environment variables.
+
+Add new SYSTEM variable named: `JAVA_HOME` with value `{UNIT}:\Users\{USER}\.sdkman\candidates\java\current`
+
+Is the convention for most of Java based programs.
+
+Then edit PATH system variable, add new entry and set java binary location using the variable: %JAVA_HOME%\bin
+
+Like this can invoke always current Java version you set up with SDK.
+
+*NOTE* Do this with rest of tools, python, go, etc... usually installers do for you.
+
+# GO
+
+Install GO version manager:
+
+https://github.com/andrewkroh/gvm
+
+For WINDOWS 7 / WINDOWS SERVER 2008 need install this patch, since version Go 1.21.5 doesn't support anymore:
+
+https://github.com/stunndard/golangwin7patch
+
 
 
 # Win32 .NET framework C++
