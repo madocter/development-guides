@@ -17,7 +17,7 @@ Java based
 VPN
 https://netbird.io/
 
-
+https://docs.netbird.io/selfhosted/selfhosted-guide#advanced-guide-with-a-custom-identity-provider
 
 Proxmox
 
