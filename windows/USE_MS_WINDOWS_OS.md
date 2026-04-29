@@ -68,7 +68,7 @@ Sometimes if previously you had Teams professional with corporate account, WINDO
 
 So you can't ve able to install again, this is not a bug but intentional.
 
-You will see: "Teams personal can´t run on desktop, try the web version".
+You will see: " Personal accounts aren’t supported yet in Teams (preview) ".
  
   
 * Remove your corporate account from accounts 
