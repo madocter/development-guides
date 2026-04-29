@@ -61,3 +61,18 @@ Computer management
  Setup for never hibernate
  
  In case u need server.
+ 
+### Prevent MS Teams bug
+
+Sometimes if previously you had Teams professional with corporate account, WINDOWS will remove your installation of TEAMS personal, and HIDE it from the STORE, so you can´t install it anymore.
+
+So you can't ve able to install again, this is not a bug but intentional.
+
+You will see: "Teams personal can´t run on desktop, try the web version".
+ 
+  
+* Remove your corporate account from accounts 
+* Uninstall TEAMS professional.
+* https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/Microsoft/Teams/Free 
+  * Check latest version from here, example: 26093.306.4583.538
+* Run winget to install TEAMS FREE `winget install Microsoft.Teams.Free --version 26093.306.4583.538`
